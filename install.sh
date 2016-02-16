@@ -3,6 +3,9 @@
 
 sudo -s <<EOF
 
+apt-get update
+apt-get dist-upgrade -y
+
 dpkg --add-architecture i386 
 apt-add-repository -y ppa:fish-shell/release-2
 add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
@@ -12,10 +15,14 @@ add-apt-repository -y ppa:atareao/telegram
 
 apt-get update
 
-apt-get install -y fish ubuntu-make oracle-java8-installer telegram
+apt-get install -y fish ubuntu-make oracle-java8-installer telegram git unity-tweak-tool gparted curl vlc
 apt-get install -y --install-recommends winehq-staging
-wget -P /tmp https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-dpkg -i /tmp/google-chrome*.deb
-apt-get --yes --fix-broken install
+
+#install google chrome
+curl -L -o /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i /tmp/chrome.deb
+apt-get -f install -y
+
+apt-get autoremove -y
 
 EOF

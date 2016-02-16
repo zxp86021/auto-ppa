@@ -15,13 +15,19 @@ add-apt-repository -y ppa:atareao/telegram
 
 apt-get update
 
-apt-get install -y fish ubuntu-make oracle-java8-installer telegram git unity-tweak-tool gparted curl vlc
+apt-get install -y fish ubuntu-make oracle-java8-installer telegram 
+apt-get install -y git unity-tweak-tool gparted curl vlc filezilla build-essential
 apt-get install -y --install-recommends winehq-staging
 
 #install google chrome
 curl -L -o /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i /tmp/chrome.deb
 apt-get -f install -y
+
+#install nodejs
+wget -qO- https://deb.nodesource.com/setup_4.x | bash -
+apt-get install nodejs -y
+npm install -g npm
 
 apt-get autoremove -y
 

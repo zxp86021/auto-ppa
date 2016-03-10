@@ -30,4 +30,7 @@ n lts
 
 apt-get autoremove -y
 
+#set default shell to fish
+chsh -s /usr/bin/fish
+
 EOF

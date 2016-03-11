@@ -16,6 +16,7 @@ add-apt-repository -y ppa:atareao/telegram
 apt-get update
 
 apt-get install -y fish ubuntu-make oracle-java8-installer telegram npm python-pip tmux geany
+apt-get install -y fcitx fcitx-chewing fcitx-libs-qt5
 apt-get install -y git unity-tweak-tool gparted curl vlc filezilla build-essential
 apt-get install -y --install-recommends winehq-staging
 
